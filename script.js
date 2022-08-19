@@ -17,16 +17,17 @@
 //That is the structure of the intended solution to the assignment.
 
 
-var chooseLength = Number(window.prompt("Please choose password length between 8 and 128 characters"));
+var chooseLength = parseInt(window.prompt("Please choose password length between 8 and 128 characters"));
   
 console.log(chooseLength);
 
   function generatePassword() {
 	
-  var length = chooseLength;
+  var length = parseInt(window.prompt("Please choose password length between 8 and 128 characters")) {
 
-  if (chooseLength > 7 && chooseLength < 129) {
 
+  while (isNaN(length) || length <8 || length > 128) 
+}
   var passwordChosen = "";
   
 
