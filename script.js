@@ -34,18 +34,20 @@
   var passwordSymbol = window.confirm("Would you like to use SPECIAL CHARACTERS?");
   if (passwordSymbol){
     charset += charsetSymbol;
-  }
+    
+  } 
+  
+  
+
+  console.log(charset);
 
   var passwordFinal = "";
   for (let i = 0; i < length; ++i) {
 		passwordFinal += charset.charAt(Math.floor(Math.random() * charset.length));
+  }
     return passwordFinal;
 
-}
-  
-  
-
-}
+};
 
 
  
