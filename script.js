@@ -16,7 +16,8 @@
 
   var charsetLower = "abcdefghijklmnopqrstuvwxyz"; 
   var charsetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-
+  var passwordNumber = "0123456789";
+  var charsetSymbol = "!#$%&'()*+,-./:;<]=>?@^_`{|}~[";
   var charset = "";
 
   var passwordLower = window.confirm("Would you like to use LOWER case letters?");
@@ -29,6 +30,16 @@
     charset += charsetUpper;
   }
 
+  var passwordNumber = window.confirm("Would you like to use NUMBERS?");
+  if (passwordNumber){
+    charset += charsetNumber;
+  }
+
+  var passwordSymbol = window.confirm("Would you like to use SPECIAL CHARACTERS?");
+  if (passwordSymbol){
+    charset += charsetSymbol;
+  }
+
   var passwordFinal = "";
   for (let i = 0; i < length; ++i) {
 		passwordFinal += charset.charAt(Math.floor(Math.random() * charset.length));
@@ -38,51 +49,11 @@
   
   
 
-  
+}
 
-  
 
-  // var passwordLower = window.confirm("Would you like to use LOWER case letters?");
-  // charsetLower = "abcdefghijklmnopqrstuvwxyz"; 
-  // if (passwordLower){
-  //   passwordChosen += charsetLower;     
-  // }
+ 
 
-  // var passwordUpper = window.confirm("Would you like to use UPPER case letters?");
-  // if (passwordUpper) {
-  //   charsetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  //   passwordChosen += charsetUpper;
-    
-  // }
-
-  var passwordNumber = window.confirm("Would you like to use NUMBERS?");
-  if (passwordNumber){
-    charsetNumber = "0123456789";
-    passwordChosen += charsetNumber;
-    
-  }
-
-  var passwordSymbol = window.confirm ("Would you like to use SPECIAL CHARACTERS?");
-  if (passwordSymbol){
-    charsetSymbol = "!#$%&'()*+,-./:;<]=>?@^_`{|}~[";
-    passwordChosen += charsetSymbol;
-    
-  }
-
-  passwordFinal = "";
-  for (var i = 0; i < length; ++i) {
-		passwordFinal += passwordChosen.charAt(Math.floor(Math.random() * passwordChosen.length));
-	}
-	return passwordFinal;
-
-  
-
-} else {
-  
-  window.alert("You did not choose a valid option");
-  generatePassword();
-}	
-};
 
 
 
