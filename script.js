@@ -37,6 +37,9 @@
     
   } 
   
+  if (!passwordLower && !passwordUpper && !passwordNumber && !passwordSymbol){
+    window.alert("You did not pick any of the characters. Please try again!")
+  }
   
 
   console.log(charset);
