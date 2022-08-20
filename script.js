@@ -18,7 +18,7 @@ function generatePassword() {
   var charsetSymbol = "!#$%&'()*+,-./:;<]=>?@^_`{|}~[";
   var charset = "";
 
-  //generating a string of user-picked characters
+  //generating a string of user-picked characters, adding more characters with each prompt
   var passwordLower = window.confirm("Would you like to use LOWER case letters?");
   if (passwordLower) {
     charset += charsetLower;
