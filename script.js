@@ -3,36 +3,42 @@
 
 
 
-//var chooseLength = parseInt(window.prompt("Please choose password length between 8 and 128 characters"));
-  
-console.log(chooseLength);
+
+
 
   function generatePassword() {
 	
   var length = parseInt(window.prompt("Please choose password length between 8 and 128 characters"));
+  console.log(length);
   while (isNaN(length) || length <8 || length > 128) {
     length = parseInt(window.prompt("Please choose password length between 8 and 128 characters"));
   }
+
+  var charsetLower = "abcdefghijklmnopqrstuvwxyz"; 
+  var charsetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+
+  var charset = "";
+
+  var passwordLower = window.confirm("Would you like to use LOWER case letters?");
+  if (passwordLower){
+    charset += charsetLower;
+  }
+
+  var passwordUpper = window.confirm("Would you like to use UPPER case letters?")
+  if (passwordUpper) {
+    charset += charsetUpper;
+  }
+
+  var passwordFinal = "";
+  for (let i = 0; i < length; ++i) {
+		passwordFinal += charset.charAt(Math.floor(Math.random() * charset.length));
+    return passwordFinal;
+
 }
-  var passwordChosen = "";
+  
   
 
-  function passwordLower() {
-    window.confirm("Would you like to use LOWER case letters?");
-    charsetLower = "abcdefghijklmnopqrstuvwxyz"; 
-    return charsetLower[Math.floor(Math.random() * charsetLower.length)];
-  }
-
-  console.log(passwordLower());
-
-
-  function passwordUpper() {
-    window.confirm("Would you like to use UPPER case letters?");
-    charsetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-    return charsetUpper[Math.floor(Math.random() * charsetUpper.length)];
-  }
-
-  console.log(passwordUpper());
+  
 
   
 
