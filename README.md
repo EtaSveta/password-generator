@@ -1,7 +1,7 @@
 # Password Generator
 
 ## Purpose
-Randomly generate a password that meets certain criteria
+Randomly generate a password that meets certain criteria.
 User can pick a password length between 8 and 128 characters. 
 User can choose whether to include upper and lower case letters, numbers ans symbols.
 
