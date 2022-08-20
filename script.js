@@ -1,23 +1,26 @@
 // Assignment code here
 
+//main function to generate password
+function generatePassword() {
 
-
-  function generatePassword() {
-	
+  //getting length of the password. 
   var length = parseInt(window.prompt("Please choose password length between 8 and 128 characters"));
   console.log(length);
+  //prompting user to pick valid length
   while (isNaN(length) || length < 8 || length > 128) {
     length = parseInt(window.prompt("Please choose password length between 8 and 128 characters"));
   }
-
-  var charsetLower = "abcdefghijklmnopqrstuvwxyz"; 
-  var charsetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+  
+  //setting variables with different characters
+  var charsetLower = "abcdefghijklmnopqrstuvwxyz";
+  var charsetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var charsetNumber = "0123456789";
   var charsetSymbol = "!#$%&'()*+,-./:;<]=>?@^_`{|}~[";
   var charset = "";
 
+  //generating a string of user-picked characters
   var passwordLower = window.confirm("Would you like to use LOWER case letters?");
-  if (passwordLower){
+  if (passwordLower) {
     charset += charsetLower;
   }
 
@@ -27,38 +30,32 @@
   }
 
   var passwordNumber = window.confirm("Would you like to use NUMBERS?");
-  if (passwordNumber){
+  if (passwordNumber) {
     charset += charsetNumber;
   }
 
   var passwordSymbol = window.confirm("Would you like to use SPECIAL CHARACTERS?");
-  if (passwordSymbol){
+  if (passwordSymbol) {
     charset += charsetSymbol;
-    
-  } 
-  
-  if (!passwordLower && !passwordUpper && !passwordNumber && !passwordSymbol){
+
+  }
+
+  //prompting user to pick characters
+  if (!passwordLower && !passwordUpper && !passwordNumber && !passwordSymbol) {
     window.alert("You did not pick any of the characters. Please try again!")
   }
-  
+
 
   console.log(charset);
 
+  //using the for loop to generate password
   var passwordFinal = "";
   for (let i = 0; i < length; ++i) {
-		passwordFinal += charset.charAt(Math.floor(Math.random() * charset.length));
+    passwordFinal += charset.charAt(Math.floor(Math.random() * charset.length));
   }
-    return passwordFinal;
+  return passwordFinal;
 
 };
-
-
- 
-
-
-
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
