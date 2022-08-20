@@ -2,21 +2,17 @@
 
 
 
-
-
-
-
   function generatePassword() {
 	
   var length = parseInt(window.prompt("Please choose password length between 8 and 128 characters"));
   console.log(length);
-  while (isNaN(length) || length <8 || length > 128) {
+  while (isNaN(length) || length < 8 || length > 128) {
     length = parseInt(window.prompt("Please choose password length between 8 and 128 characters"));
   }
 
   var charsetLower = "abcdefghijklmnopqrstuvwxyz"; 
   var charsetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-  var passwordNumber = "0123456789";
+  var charsetNumber = "0123456789";
   var charsetSymbol = "!#$%&'()*+,-./:;<]=>?@^_`{|}~[";
   var charset = "";
 
